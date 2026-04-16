@@ -1,13 +1,5 @@
 # Day 4: State File Management - Remote Backend
 
-## Topics Covered
-- How Terraform updates Infrastructure
-- Terraform state file
-- State file best practices
-- Remote backend setup with S3
-- S3 Native State Locking (No DynamoDB required)
-- State management
-
 ## Key Learning Points
 
 ### How Terraform Updates Infrastructure
@@ -142,20 +134,17 @@ terraform state list
 
 ### State Commands
 ```bash
-# List resources in state
-terraform state list
+  
+terraform state list        # List resources in state
 
-# Show detailed state information
-terraform state show <resource_name>
+terraform state show <resource_name>    # Show detailed state information
 
-# Remove resource from state (without destroying)
-terraform state rm <resource_name>
+terraform state rm <resource_name>        # Remove resource from state (without destroying)
 
-# Move resource to different state address
-terraform state mv <source> <destination>
+terraform state mv <source> <destination>      # Move resource to different state address
 
-# Pull current state and display
-terraform state pull
+terraform state pull      # Pull current state and display
+
 ```
 
 ### Security Considerations
@@ -175,7 +164,3 @@ terraform state pull
 - **Bucket Names**: S3 bucket names must be globally unique
 - **Terraform Version**: Requires Terraform 1.10+ for S3 native locking; 1.11+ recommended for stable GA release
 
-
-## Next Steps
-
-Proceed to Day 5 to learn about Terraform variables and how to make your configurations more flexible and reusable also don't forget to check the task.md file for the assignment of day 4.
